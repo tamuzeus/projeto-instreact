@@ -1,10 +1,33 @@
 export default function Sidebar() {
 
+
+    const arrayObjects = [{
+        img: "assets/img/bad.vibes.memes.svg",
+        name: "bad.vibes.memes",
+        condition: "Sugestões para você",
+    }, {
+        img: "assets/img/chibirdart.svg",
+        name: "chibirdart",
+        condition: "Sugestões para você",
+    }, {
+        img: "assets/img/razoesparaacreditar.svg",
+        name: "razoesparaacreditar",
+        condition: "Novo no Instagram",
+    }, {
+        img: "assets/img/adorable_animals.svg",
+        name: "adorable_animals",
+        condition: "Sugestões para você",
+    }, {
+        img: "assets/img/smallcutecats.svg",
+        name: "smallcutecats",
+        condition: "Sugestões para você",
+    },]
+
     function Post(props) {
         return (
             <div class="sugestao">
                 <div class="usuario">
-                    <img src={props.svg} />
+                    <img src={props.img} />
                     <div class="texto">
                         <div class="nome">{props.name}</div>
                         <div class="razao">{props.condition}</div>
@@ -18,6 +41,7 @@ export default function Sidebar() {
 
     return (
         <div class="sidebar">
+
 
             <div class="usuario">
                 <img src="assets/img/catanacomics.svg" />
@@ -33,35 +57,12 @@ export default function Sidebar() {
                     <div>Ver tudo</div>
                 </div>
 
-                <Post
-                    svg="assets/img/bad.vibes.memes.svg"
-                    name="bad.vibes.memes"
-                    condition="Segue você"
-                />
+                {arrayObjects.map((value) =>
+                    <Post
+                        img={value.img}
+                        name={value.name}
+                        condition={value.condition} />)}
 
-                <Post
-                    svg="assets/img/chibirdart.svg"
-                    name="chibirdart"
-                    condition="Segue você"
-                />
-
-                <Post
-                    svg="assets/img/razoesparaacreditar.svg"
-                    name="razoesparaacreditar"
-                    condition="Novo no Instagram"
-                />
-
-                <Post
-                    svg="assets/img/adorable_animals.svg"
-                    name="adorable_animals"
-                    condition="Segue você"
-                />
-
-                <Post
-                    svg="assets/img/smallcutecats.svg"
-                    name="smallcutecats"
-                    condition="Segue você"
-                />
             </div>
 
             <div class="links">
